@@ -36,7 +36,8 @@ func input(title string) string {
 func pullingCard(cards map[int]string, deck map[string]int) int {
 	for {
 		cardValue := randCard()
-		deck[cards[cardValue]] = deck[cards[cardValue]] - 1
+		deck[cards[cardValue]]--
+		fmt.Println(deck)
 		if deck[cards[cardValue]] >= 0 {
 			return cardValue
 		}
